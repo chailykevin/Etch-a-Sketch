@@ -11,10 +11,50 @@ body {
   flex-direction: column;
 }
 
+.hero {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.colors {
+  border: 2px solid black;
+  padding: 10px;
+  flex-grow: 0;
+  max-width: 68px;
+}
+
+.colors button {
+  width: 20px;
+  height: 20px;
+  border: none;
+}
+
+.colors button#red {
+  background-color: hsl(0, 100%, 50%);
+}
+
+.colors button#orange {
+  background-color: hsl(30, 100%, 50%);
+}
+.colors button#yellow {
+  background-color: hsl(60, 100%, 50%);
+}
+.colors button#green {
+  background-color: hsl(120, 100%, 50%);
+}
+
+.colors button:hover {
+  cursor: pointer;
+}
+
 #container {
   display: flex;
   flex-wrap: wrap;
   flex: auto;
+  height: 100%;
+  flex: 9;
+  border: 2px solid black;
 }
 
 div {
@@ -24,7 +64,7 @@ div {
 }
 
 .hovered {
-  background-color: gray;
+  background-color: gray !important;
 }
 
 .header {
@@ -33,9 +73,9 @@ div {
   margin: 0px;
 }
 
-.clicked {
+/* .clicked {
   background-color: black;
-}
+} */
 
 .showGrid {
   border: 1px solid slategrey;

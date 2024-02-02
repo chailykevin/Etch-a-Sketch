@@ -21,7 +21,7 @@ container.addEventListener("mouseenter", () => {
 
     div.forEach((currentDiv) => {
         currentDiv.addEventListener("mousedown", () => {
-            currentDiv.classList.add("clicked");
+            currentDiv.style.backgroundColor = currentColor;
         })
     })
 })
@@ -90,4 +90,30 @@ showGridButton.addEventListener("click", () => {
             showGridButton.id = "Y";
         })
     }
+})
+
+//Add event listener to color buttons
+const colors = document.querySelector(".colors");
+let currentColor = "black";
+
+colors.addEventListener("click", (e) => {
+    if(e.target.id === "red"){
+        currentColor = "hsl(0, 100%, 50%)";
+    } else if (e.target.id === "orange") {
+        currentColor = "hsl(30, 100%, 50%)";
+    } else if (e.target.id === "yellow") {
+        currentColor = "hsl(60, 100%, 50%)";
+    } else if (e.target.id === "green") {
+        currentColor = "hsl(120, 100%, 50%)";
+    }
+})
+
+//Clear grid event listener
+const clearGridButton = document.querySelector("#clearGrid");
+
+clearGridButton.addEventListener("click", () => {
+    div.forEach((div) => {
+        console.log("hi");
+        div.style.backgroundColor = "transparent";
+    })
 })

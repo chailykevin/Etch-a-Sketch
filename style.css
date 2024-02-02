@@ -11,7 +11,7 @@ body {
   flex-direction: column;
 }
 
-main {
+#container {
   display: flex;
   flex-wrap: wrap;
   flex: auto;
@@ -24,11 +24,19 @@ div {
 }
 
 .hovered {
-  background-color: green;
+  background-color: gray;
 }
 
-.buttons {
+.header {
   flex: 0;
   padding: 0px;
   margin: 0px;
+}
+
+.clicked {
+  background-color: black;
+}
+
+.showGrid {
+  border: 1px solid slategrey;
 }

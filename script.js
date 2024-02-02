@@ -3,7 +3,7 @@ const container = document.querySelector("#container");
 //Add 16x16 grid if page is loaded
 window.addEventListener("DOMContentLoaded", updateGrid(16));
 
-//Add a "trail" like effect, whenever a div is hovered by mouse, the background color will change
+//Add hovered effect. If a div is hovered, the background color will change
 container.addEventListener("mouseenter", () => {
     const div = container.childNodes;
 
@@ -12,14 +12,46 @@ container.addEventListener("mouseenter", () => {
             currentDiv.classList.add("hovered");
         })
     })
+
+    div.forEach((currentDiv) => {
+        currentDiv.addEventListener("mouseleave", () => {
+            currentDiv.classList.remove("hovered");
+        })
+    })
+
+    div.forEach((currentDiv) => {
+        currentDiv.addEventListener("mousedown", () => {
+            currentDiv.classList.add("clicked");
+        })
+    })
 })
+
+//Add click event listener, whenever a div is clicked, it will change it's background color.
+
 
 //Asked the user to input a new grid value
 const addGrid = document.querySelector("#grid");
 
 addGrid.addEventListener("click", () => {
-    deleteGrid();
-    updateGrid(prompt("Input how big the grid is gonna be : "));
+    const value = prompt("Input how big the grid is gonna be : (Range 1 - 100)");
+    if(value <= 0 || value > 100) {
+        alert("Invalid value")
+    } else {
+        deleteGrid();
+        updateGrid(value);
+        //To keep the grid on/off based on the previous condition
+        if(showGridButton.id == "X"){
+            div.forEach((div) => {
+                div.classList.add("showGrid");
+            })
+        } else {
+            div.forEach((div) => {
+                div.classList.remove("showGrid");
+                showGridButton.id = "Y";
+            })
+        }
+    }
+    
 })
 
 //Function to update grid
@@ -41,3 +73,21 @@ function updateGrid(value) {
 function deleteGrid() {
     container.innerHTML = "";
 }
+
+//Event listener to show grid
+const showGridButton = document.querySelector(".showGridButton");
+const div = container.childNodes;
+
+showGridButton.addEventListener("click", () => {
+    if(showGridButton.id == "Y"){
+        div.forEach((div) => {
+            div.classList.add("showGrid");
+            showGridButton.id = "X";
+        })
+    } else {
+        div.forEach((div) => {
+            div.classList.remove("showGrid");
+            showGridButton.id = "Y";
+        })
+    }
+})

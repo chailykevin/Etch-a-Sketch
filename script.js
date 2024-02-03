@@ -109,7 +109,12 @@ colors.addEventListener("click", (e) => {
         currentColor = "hsl(0, 0%, 0%)";
     } else if (e.target.id === "white") {
         currentColor = "hsl(0, 0%, 100%)";
-    }
+    } else if (e.target.id === "random") {
+        let h = Math.floor(Math.random()*100);
+        let s = Math.floor(Math.random()*100);
+        let l = Math.floor(Math.random()*100);
+        currentColor = `hsl(${h}, ${s}%, ${l}%)`
+    } 
 })
 
 //Clear grid event listener

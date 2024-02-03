@@ -105,6 +105,10 @@ colors.addEventListener("click", (e) => {
         currentColor = "hsl(60, 100%, 50%)";
     } else if (e.target.id === "green") {
         currentColor = "hsl(120, 100%, 50%)";
+    } else if (e.target.id === "black") {
+        currentColor = "hsl(0, 0%, 0%)";
+    } else if (e.target.id === "white") {
+        currentColor = "hsl(0, 0%, 100%)";
     }
 })
 
@@ -113,7 +117,6 @@ const clearGridButton = document.querySelector("#clearGrid");
 
 clearGridButton.addEventListener("click", () => {
     div.forEach((div) => {
-        console.log("hi");
         div.style.backgroundColor = "transparent";
     })
 })

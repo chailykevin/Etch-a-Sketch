@@ -15,6 +15,8 @@ body {
   display: flex;
   gap: 5px;
   flex-wrap: wrap;
+  margin: 10px 30px;
+  justify-content: center;
 }
 
 .colors {
@@ -28,6 +30,7 @@ body {
   width: 20px;
   height: 20px;
   border: none;
+  border: 0.5px solid black;
 }
 
 .colors button#red {
@@ -37,11 +40,21 @@ body {
 .colors button#orange {
   background-color: hsl(30, 100%, 50%);
 }
+
 .colors button#yellow {
   background-color: hsl(60, 100%, 50%);
 }
+
 .colors button#green {
   background-color: hsl(120, 100%, 50%);
+}
+
+.colors button#black {
+  background-color: hsl(0, 0%, 0%);
+}
+
+.colors button#white {
+  background-color: hsl(0, 0%, 100%);
 }
 
 .colors button:hover {
@@ -52,8 +65,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   flex: auto;
-  height: 100%;
-  flex: 9;
+  max-height: 525px;
+  max-width: 525px;
   border: 2px solid black;
 }
 
@@ -79,4 +92,19 @@ div {
 
 .showGrid {
   border: 1px solid slategrey;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 10px;
+}
+
+.header button {
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid grey;
+  background-color: aquamarine;
 }

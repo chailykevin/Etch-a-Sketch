@@ -11,6 +11,11 @@ body {
   flex-direction: column;
 }
 
+h1 {
+  text-align: center;
+  margin: 15px 15px 0px 15px;
+}
+
 .hero {
   display: flex;
   gap: 5px;
@@ -26,10 +31,10 @@ body {
   max-width: 68px;
 }
 
-.colors button {
+.colors button,
+.colors input {
   width: 20px;
   height: 20px;
-  border: none;
   border: 0.5px solid black;
 }
 
@@ -69,8 +74,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   flex: auto;
-  max-height: 525px;
-  max-width: 525px;
+  max-height: 500px;
+  max-width: 500px;
   border: 2px solid black;
 }
 
@@ -111,4 +116,28 @@ div {
   border-radius: 8px;
   border: 1px solid grey;
   background-color: aquamarine;
+}
+
+@media (max-width: 628px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero .colors {
+    max-width: 345px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero .colors button#random {
+    position: relative;
+    top: -5px;
+  }
+
+  .hero .colors input {
+    position: relative;
+    top: -4px;
+  }
 }

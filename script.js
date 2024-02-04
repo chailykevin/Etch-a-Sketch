@@ -94,6 +94,7 @@ showGridButton.addEventListener("click", () => {
 
 //Add event listener to color buttons
 const colors = document.querySelector(".colors");
+const colorPicker = document.querySelector("#color")
 let currentColor = "black";
 
 colors.addEventListener("click", (e) => {
@@ -114,7 +115,11 @@ colors.addEventListener("click", (e) => {
         let s = Math.floor(Math.random()*100);
         let l = Math.floor(Math.random()*100);
         currentColor = `hsl(${h}, ${s}%, ${l}%)`
-    } 
+    } else if (e.target.id === "color") {
+        colorPicker.addEventListener("input", (e) => {
+            currentColor = e.target.value;
+        })
+    }
 })
 
 //Clear grid event listener
